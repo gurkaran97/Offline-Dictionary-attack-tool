@@ -7,9 +7,9 @@ except:
     print("No file found, please check again")
 for word in passfile:
     enc_word = word.encode()
-    passfile_hashes = hashlib.md5(enc_word).hexdigest()
+    passfile_hashes = hashlib.md5(enc_word.strip()).hexdigest()
     if passfile_hashes == hashed_word:
-        print('Password found. Password is ' + passfile_hashes)
+        print('Password found. Password is ' + word)
         break
     else:
         print("No password found")
